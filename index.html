@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rishika — 3 Week Interview Prep Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f0e8;
+    --paper: #faf7f2;
+    --ink: #1a1410;
+    --muted: #7a6f63;
+    --border: #d4c9b8;
+    --w1: #c84b2f;
+    --w2: #2f6bc8;
+    --w3: #2f9c5a;
+    --w1-light: #fdf0ed;
+    --w2-light: #edf3fd;
+    --w3-light: #edfdf3;
+    --yellow: #f5c842;
+    --yellow-light: #fdf8e6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+/* HERO */
+.hero {
+background: var(–ink);
+color: var(–bg);
+padding: 56px 48px 48px;
+position: relative;
+overflow: hidden;
+}
+.hero::after {
+content: ‘21’;
+position: absolute;
+right: -20px; top: -40px;
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 280px;
+color: rgba(255,255,255,0.04);
+line-height: 1;
+pointer-events: none;
+}
+.hero-tag {
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 11px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(–yellow);
+margin-bottom: 12px;
+}
+.hero h1 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(3rem, 8vw, 6rem);
+line-height: 0.95;
+letter-spacing: 2px;
+margin-bottom: 20px;
+}
+.hero h1 span { color: var(–yellow); }
+.hero-sub {
+font-size: 14px;
+color: rgba(245,240,232,0.65);
+max-width: 560px;
+margin-bottom: 32px;
+}
+.hero-stats {
+display: flex;
+gap: 32px;
+flex-wrap: wrap;
+}
+.stat { border-left: 3px solid var(–yellow); padding-left: 12px; }
+.stat-num {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 2rem;
+color: var(–yellow);
+line-height: 1;
+}
+.stat-label {
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 10px;
+letter-spacing: 1px;
+text-transform: uppercase;
+color: rgba(245,240,232,0.5);
+}
+
+/* NAV */
+nav {
+background: var(–paper);
+border-bottom: 2px solid var(–ink);
+padding: 0 48px;
+display: flex;
+gap: 0;
+overflow-x: auto;
+position: sticky;
+top: 0;
+z-index: 100;
+}
+nav a {
+padding: 14px 20px;
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 11px;
+letter-spacing: 1px;
+text-transform: uppercase;
+color: var(–muted);
+text-decoration: none;
+white-space: nowrap;
+border-bottom: 3px solid transparent;
+margin-bottom: -2px;
+transition: all 0.15s;
+font-weight: 600;
+}
+nav a:hover { color: var(–ink); border-color: var(–ink); }
+nav a.w1:hover { border-color: var(–w1); color: var(–w1); }
+nav a.w2:hover { border-color: var(–w2); color: var(–w2); }
+nav a.w3:hover { border-color: var(–w3); color: var(–w3); }
+
+/* LAYOUT */
+main { max-width: 1000px; margin: 0 auto; padding: 48px 24px 80px; }
+
+/* WEEK HEADERS */
+.week-header {
+display: flex;
+align-items: center;
+gap: 20px;
+margin-bottom: 32px;
+padding: 24px 32px;
+border: 2px solid;
+border-radius: 4px;
+position: relative;
+overflow: hidden;
+}
+.week-header::before {
+content: ‘’;
+position: absolute;
+left: 0; top: 0; bottom: 0;
+width: 6px;
+}
+.wh-1 { border-color: var(–w1); background: var(–w1-light); }
+.wh-1::before { background: var(–w1); }
+.wh-2 { border-color: var(–w2); background: var(–w2-light); }
+.wh-2::before { background: var(–w2); }
+.wh-3 { border-color: var(–w3); background: var(–w3-light); }
+.wh-3::before { background: var(–w3); }
+.week-num {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 4rem;
+line-height: 1;
+opacity: 0.15;
+min-width: 80px;
+}
+.week-info h2 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.8rem;
+letter-spacing: 1px;
+margin-bottom: 4px;
+}
+.week-info p {
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 12px;
+opacity: 0.7;
+}
+.week-goal {
+margin-left: auto;
+padding: 8px 16px;
+border-radius: 4px;
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 1px;
+text-transform: uppercase;
+border: 1.5px solid;
+}
+.wg-1 { border-color: var(–w1); color: var(–w1); }
+.wg-2 { border-color: var(–w2); color: var(–w2); }
+.wg-3 { border-color: var(–w3); color: var(–w3); }
+
+/* DAY CARDS */
+.days-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 40px; }
+@media (max-width: 640px) { .days-grid { grid-template-columns: 1fr; } }
+
+.day-card {
+background: var(–paper);
+border: 1.5px solid var(–border);
+border-radius: 4px;
+overflow: hidden;
+}
+.day-card.weekend { border-style: dashed; opacity: 0.85; }
+.day-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 16px;
+border-bottom: 1.5px solid var(–border);
+}
+.day-num {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.4rem;
+letter-spacing: 1px;
+}
+.d1 .day-num { color: var(–w1); }
+.d2 .day-num { color: var(–w2); }
+.d3 .day-num { color: var(–w3); }
+.day-name {
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(–muted);
+}
+.day-tag {
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 10px;
+padding: 2px 8px;
+border-radius: 2px;
+font-weight: 600;
+letter-spacing: 0.5px;
+}
+.tag-aws { background: #fff3e0; color: #e65100; }
+.tag-rag { background: #e8f5e9; color: #2e7d32; }
+.tag-dsa { background: #e3f2fd; color: #1565c0; }
+.tag-sys { background: #f3e5f5; color: #6a1b9a; }
+.tag-project { background: #fce4ec; color: #880e4f; }
+.tag-interview { background: #fff8e1; color: #f57f17; }
+.tag-apply { background: #e0f7fa; color: #00695c; }
+.tag-rest { background: #f5f5f5; color: #616161; }
+
+.day-body { padding: 14px 16px; }
+.day-focus {
+font-weight: 600;
+font-size: 13px;
+margin-bottom: 8px;
+color: var(–ink);
+}
+.day-tasks { list-style: none; padding: 0; }
+.day-tasks li {
+padding: 4px 0 4px 16px;
+position: relative;
+font-size: 12.5px;
+color: var(–muted);
+border-bottom: 1px solid rgba(212,201,184,0.4);
+}
+.day-tasks li:last-child { border-bottom: none; }
+.day-tasks li::before {
+content: ‘→’;
+position: absolute;
+left: 0;
+color: var(–border);
+font-size: 11px;
+}
+.day-tasks li strong { color: var(–ink); }
+.day-time {
+margin-top: 10px;
+padding: 6px 10px;
+background: var(–bg);
+border-radius: 2px;
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 10px;
+color: var(–muted);
+}
+
+/* RESOURCE BLOCKS */
+.resources {
+background: var(–ink);
+color: var(–bg);
+border-radius: 4px;
+padding: 24px 28px;
+margin-bottom: 40px;
+}
+.resources h3 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.4rem;
+letter-spacing: 2px;
+color: var(–yellow);
+margin-bottom: 16px;
+}
+.res-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.res-item {
+border: 1px solid rgba(245,240,232,0.15);
+border-radius: 3px;
+padding: 12px 14px;
+}
+.res-item .res-topic {
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 10px;
+letter-spacing: 1px;
+text-transform: uppercase;
+color: var(–yellow);
+margin-bottom: 6px;
+}
+.res-item .res-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.res-item .res-detail { font-size: 11px; color: rgba(245,240,232,0.5); }
+
+/* RULES BLOCK */
+.rules {
+border: 2px solid var(–yellow);
+background: var(–yellow-light);
+border-radius: 4px;
+padding: 24px 28px;
+margin-bottom: 40px;
+}
+.rules h3 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.4rem;
+letter-spacing: 2px;
+margin-bottom: 16px;
+}
+.rules ol { padding-left: 20px; }
+.rules li {
+padding: 6px 0;
+font-size: 13.5px;
+border-bottom: 1px solid rgba(212,201,184,0.5);
+}
+.rules li:last-child { border-bottom: none; }
+.rules li strong { color: var(–w1); }
+
+/* SECTION */
+.section { margin-bottom: 64px; }
+.section-label {
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 11px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(–muted);
+margin-bottom: 24px;
+padding-bottom: 12px;
+border-bottom: 1px solid var(–border);
+}
+
+/* CHECKLIST */
+.end-checklist { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+@media (max-width: 640px) { .end-checklist { grid-template-columns: 1fr; } }
+.ecl-col { background: var(–paper); border: 1.5px solid var(–border); border-radius: 4px; padding: 20px; }
+.ecl-col h4 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.1rem;
+letter-spacing: 1px;
+margin-bottom: 12px;
+padding-bottom: 8px;
+border-bottom: 2px solid;
+}
+.ecl-col.c1 h4 { border-color: var(–w1); color: var(–w1); }
+.ecl-col.c2 h4 { border-color: var(–w2); color: var(–w2); }
+.ecl-col.c3 h4 { border-color: var(–w3); color: var(–w3); }
+.ecl-col ul { list-style: none; padding: 0; }
+.ecl-col li {
+display: flex; gap: 8px; align-items: flex-start;
+padding: 5px 0; font-size: 12px;
+border-bottom: 1px solid rgba(212,201,184,0.3);
+}
+.ecl-col li:last-child { border-bottom: none; }
+.cb { width: 14px; height: 14px; border: 1.5px solid var(–border); border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
+
+/* DAILY SCHEDULE */
+.schedule {
+background: var(–paper);
+border: 1.5px solid var(–border);
+border-radius: 4px;
+overflow: hidden;
+margin-bottom: 40px;
+}
+.schedule-header {
+background: var(–ink);
+color: var(–yellow);
+padding: 14px 20px;
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.2rem;
+letter-spacing: 2px;
+}
+.schedule-row {
+display: flex;
+align-items: stretch;
+border-bottom: 1px solid var(–border);
+}
+.schedule-row:last-child { border-bottom: none; }
+.sch-time {
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 11px;
+font-weight: 600;
+color: var(–muted);
+padding: 12px 16px;
+border-right: 1px solid var(–border);
+min-width: 110px;
+background: var(–bg);
+display: flex;
+align-items: center;
+}
+.sch-activity { padding: 12px 16px; font-size: 13px; flex: 1; }
+.sch-activity strong { color: var(–ink); }
+.sch-activity span { color: var(–muted); font-size: 12px; }
+.sch-tag {
+padding: 12px 16px;
+display: flex;
+align-items: center;
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 1px;
+min-width: 90px;
+justify-content: center;
+}
+
+footer {
+background: var(–ink);
+color: rgba(245,240,232,0.4);
+padding: 24px 48px;
+text-align: center;
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 11px;
+letter-spacing: 1px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<div class="hero">
+  <div class="hero-tag">▸ Interview Preparation Blueprint</div>
+  <h1>3 WEEK<br><span>BATTLE PLAN</span></h1>
+  <p class="hero-sub">A rigorous, day-by-day study plan to go from "avoiding Lambda questions" to confidently owning every technical interview at mid-size product companies.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">21</div><div class="stat-label">Days Total</div></div>
+    <div class="stat"><div class="stat-num">2</div><div class="stat-label">Hrs / Day</div></div>
+    <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Applications</div></div>
+    <div class="stat"><div class="stat-num">1</div><div class="stat-label">Goal: Offer</div></div>
+  </div>
+</div>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#rules">Rules</a>
+  <a href="#schedule">Daily Schedule</a>
+  <a href="#week1" class="w1">Week 1 — AWS</a>
+  <a href="#week2" class="w2">Week 2 — RAG + DSA</a>
+  <a href="#week3" class="w3">Week 3 — Interviews</a>
+  <a href="#resources">Resources</a>
+  <a href="#endcheck">Final Checklist</a>
+</nav>
+
+<main>
+
+<!-- RULES -->
+
+<section id="rules" class="section">
+  <div class="section-label">// Ground Rules — Read First</div>
+  <div class="rules">
+    <h3>The 5 Rules of This Plan</h3>
+    <ol>
+      <li><strong>Never skip a day.</strong> Missing one day creates a two-day hole. If life happens, do 30 minutes minimum — don't do zero.</li>
+      <li><strong>Apply while you study.</strong> Start sending applications from Day 3. Interviews take 2–3 weeks to arrive. Apply now, prep simultaneously.</li>
+      <li><strong>Build, don't just read.</strong> Every AWS concept you learn — type it, deploy it, break it. Reading without doing = forgetting in 48 hours.</li>
+      <li><strong>Know what YOU built.</strong> Before any interview, write down exactly which components of your RAG project you personally owned. Never claim more, never claim less.</li>
+      <li><strong>Explain out loud every day.</strong> Pick one concept you studied and explain it out loud like you're in an interview. This is non-negotiable. Most candidates read everything but can't speak it.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- DAILY SCHEDULE -->
+
+<section id="schedule" class="section">
+  <div class="section-label">// Daily Time Budget — 2 Hours</div>
+  <div class="schedule">
+    <div class="schedule-header">DAILY SCHEDULE (Assuming 9-6 Work Day)</div>
+    <div class="schedule-row">
+      <div class="sch-time">6:00–7:00 AM</div>
+      <div class="sch-activity"><strong>Primary Study Block</strong><br><span>Deep focus — AWS / RAG / DSA. No phone. This is your most important hour.</span></div>
+      <div class="sch-tag tag-aws">CORE</div>
+    </div>
+    <div class="schedule-row">
+      <div class="sch-time">1:00–1:30 PM</div>
+      <div class="sch-activity"><strong>Lunch Break — Passive Learning</strong><br><span>Watch one YouTube video (Gaurav Sen / AWS channel). No typing needed.</span></div>
+      <div class="sch-tag tag-sys">WATCH</div>
+    </div>
+    <div class="schedule-row">
+      <div class="sch-time">8:00–9:00 PM</div>
+      <div class="sch-activity"><strong>Practice Block</strong><br><span>DSA problems (Week 1–2) OR mock interview practice (Week 3) OR project work</span></div>
+      <div class="sch-tag tag-dsa">PRACTICE</div>
+    </div>
+    <div class="schedule-row">
+      <div class="sch-time">9:00–9:15 PM</div>
+      <div class="sch-activity"><strong>Explain Out Loud</strong><br><span>Pick ONE concept from today. Explain it to yourself in the mirror. Record if needed.</span></div>
+      <div class="sch-tag tag-interview">SPEAK</div>
+    </div>
+    <div class="schedule-row">
+      <div class="sch-time">Weekend AM (2hr)</div>
+      <div class="sch-activity"><strong>Applications + Referrals</strong><br><span>15–20 job applications. 2–3 referral messages. Update tracking spreadsheet.</span></div>
+      <div class="sch-tag tag-apply">APPLY</div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEK 1 -->
+
+<section id="week1" class="section">
+  <div class="section-label">// Week 1 — Days 1 to 7</div>
+  <div class="week-header wh-1">
+    <div class="week-num" style="color:var(--w1)">01</div>
+    <div class="week-info">
+      <h2 style="color:var(--w1)">AWS SERVERLESS — IN AND OUT</h2>
+      <p>Lambda · API Gateway · RDS Proxy · SQS · Bedrock Rate Limits · CloudWatch</p>
+    </div>
+    <div class="week-goal wg-1">Goal: Own Your Architecture</div>
+  </div>
+
+  <div class="days-grid">
+
+
+<div class="day-card d1">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w1)">DAY 01</div>
+    <div class="day-name">Monday</div>
+    <div class="day-tag tag-aws">AWS Lambda</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">Lambda Deep Dive — How it Actually Works</div>
+    <ul class="day-tasks">
+      <li>Read: <strong>Lambda execution model</strong> — cold start vs warm start, execution environment lifecycle</li>
+      <li>Read: <strong>Concurrency types</strong> — reserved concurrency vs provisioned concurrency vs unreserved</li>
+      <li>Understand: What happens when 50 users hit Lambda simultaneously</li>
+      <li>Build: Write a simple Lambda function locally using AWS SAM CLI</li>
+      <li>Explain out loud: "How does Lambda scale when traffic spikes?"</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: Concurrency docs | Evening: SAM CLI setup + first function</div>
+  </div>
+</div>
+
+<div class="day-card d1">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w1)">DAY 02</div>
+    <div class="day-name">Tuesday</div>
+    <div class="day-tag tag-aws">API Gateway</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">API Gateway — How it Connects to Lambda</div>
+    <ul class="day-tasks">
+      <li>Read: <strong>REST API vs HTTP API</strong> in API Gateway — differences, when to use which</li>
+      <li>Read: <strong>Integration types</strong> — Lambda proxy integration vs custom integration</li>
+      <li>Understand: Request/response flow from client → API GW → Lambda → response</li>
+      <li>Read: <strong>Throttling</strong> — rate limit vs burst limit, how 429 errors happen</li>
+      <li>Build: Connect your Day 1 Lambda to API Gateway via console</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: API GW docs | Evening: Wire Lambda + API GW + test with Postman</div>
+  </div>
+</div>
+
+<div class="day-card d1">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w1)">DAY 03</div>
+    <div class="day-name">Wednesday</div>
+    <div class="day-tag tag-aws">Lambda Authorizer</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">Lambda Authorizer + Okta OAuth — Your Exact System</div>
+    <ul class="day-tasks">
+      <li>Read: <strong>Lambda Authorizer types</strong> — TOKEN vs REQUEST authorizer</li>
+      <li>Understand: JWT validation flow — how you verify Okta tokens in Lambda</li>
+      <li>Understand: <strong>Authorizer caching</strong> — TTL, why it matters, cache by header</li>
+      <li>Read: OAuth 2.0 flows — Client Credentials vs Authorization Code (know both)</li>
+      <li><strong>Start applying:</strong> Send first 5 job applications today</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: Authorizer docs | Evening: Applications + explain OAuth flow out loud</div>
+  </div>
+</div>
+
+<div class="day-card d1">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w1)">DAY 04</div>
+    <div class="day-name">Thursday</div>
+    <div class="day-tag tag-aws">RDS + Aurora</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">Aurora PostgreSQL + RDS Proxy + pgvector</div>
+    <ul class="day-tasks">
+      <li>Read: <strong>RDS Proxy</strong> — why it exists, connection pooling problem it solves</li>
+      <li>Understand: Why Lambda + Aurora without RDS Proxy causes connection exhaustion</li>
+      <li>Read: <strong>pgvector extension</strong> — HNSW vs IVFFlat indexes, when to use each</li>
+      <li>Understand: Cosine similarity vs L2 distance vs inner product in pgvector</li>
+      <li>Write down: Exactly how your RAG system queries pgvector — the SQL query</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: RDS Proxy docs | Evening: pgvector GitHub README + index docs</div>
+  </div>
+</div>
+
+<div class="day-card d1">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w1)">DAY 05</div>
+    <div class="day-name">Friday</div>
+    <div class="day-tag tag-aws">Bedrock + SQS</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">AWS Bedrock Rate Limits + Event-Driven with SQS</div>
+    <ul class="day-tasks">
+      <li>Read: <strong>Bedrock service quotas</strong> — tokens per minute, requests per minute limits</li>
+      <li>Understand: How to handle Bedrock throttling — exponential backoff, retry strategy</li>
+      <li>Read: <strong>SQS Standard vs FIFO</strong> — differences, at-least-once vs exactly-once</li>
+      <li>Understand: Dead Letter Queue — what it is, when messages go there, how to monitor</li>
+      <li>Send 5 more applications — target AI-first startups today</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: Bedrock quotas + SQS docs | Evening: Applications</div>
+  </div>
+</div>
+
+<div class="day-card d1">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w1)">DAY 06</div>
+    <div class="day-name">Saturday</div>
+    <div class="day-tag tag-aws">CloudWatch</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">CloudWatch — Monitoring Your Own System</div>
+    <ul class="day-tasks">
+      <li>Read: <strong>CloudWatch Logs Insights</strong> — query language basics</li>
+      <li>Go to your actual CloudWatch — look at your Lambda logs right now</li>
+      <li>Understand: Key Lambda metrics — Duration, Errors, Throttles, ConcurrentExecutions</li>
+      <li>Set up: One CloudWatch alarm on Lambda error rate (do it, don't just read)</li>
+      <li><strong>Weekend applications:</strong> Send 15 applications today</li>
+    </ul>
+    <div class="day-time">⏱️ 2hrs study + 2hrs applications</div>
+  </div>
+</div>
+
+<div class="day-card d1">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w1)">DAY 07</div>
+    <div class="day-name">Sunday</div>
+    <div class="day-tag tag-interview">Week 1 Review</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">Consolidation + Mock Interview Yourself</div>
+    <ul class="day-tasks">
+      <li>Write down: All 5 AWS components you studied — in your own words, no notes</li>
+      <li>Answer out loud: "How does your RAG system scale to 50 concurrent users?"</li>
+      <li>Answer out loud: "What happens when Bedrock rate limits your calls?"</li>
+      <li>Answer out loud: "Why did you use RDS Proxy in your architecture?"</li>
+      <li>Identify: Which answers still feel shaky — mark for Week 2 review</li>
+    </ul>
+    <div class="day-time">⏱️ 1hr review + 1hr self mock interview out loud</div>
+  </div>
+</div>
+
+<div class="day-card d1" style="border-style:dashed; opacity:0.7">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w1)">WEEK 1</div>
+    <div class="day-name">Exit Test</div>
+    <div class="day-tag tag-interview">Self Check</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">You Pass Week 1 If You Can Answer ALL of These</div>
+    <ul class="day-tasks">
+      <li>What is Lambda concurrency? Difference between reserved and provisioned?</li>
+      <li>How does API Gateway connect to Lambda? What is proxy integration?</li>
+      <li>How does your Lambda Authorizer validate Okta JWTs?</li>
+      <li>Why did you use RDS Proxy? What problem does it solve?</li>
+      <li>How does Bedrock throttle and how do you handle it?</li>
+      <li>What metric in CloudWatch tells you your Lambda is failing?</li>
+    </ul>
+    <div class="day-time">⏱️ If you can't answer 2+ of these — repeat those specific days</div>
+  </div>
+</div>
+
+
+  </div>
+
+  <!-- Week 1 Resources -->
+
+  <div class="resources">
+    <h3>Week 1 — Study Resources</h3>
+    <div class="res-grid">
+      <div class="res-item">
+        <div class="res-topic">Lambda</div>
+        <div class="res-name">AWS Lambda Concurrency Docs</div>
+        <div class="res-detail">docs.aws.amazon.com → Lambda → Concurrency. Read the entire page.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">API Gateway</div>
+        <div class="res-name">Serverless Land</div>
+        <div class="res-detail">serverlessland.com — Free patterns and tutorials. Specifically: API GW + Lambda patterns.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">Auth</div>
+        <div class="res-name">JWT.io</div>
+        <div class="res-detail">jwt.io — Decode and understand JWT structure. Understand claims, signature, expiry.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">pgvector</div>
+        <div class="res-name">pgvector GitHub README</div>
+        <div class="res-detail">github.com/pgvector/pgvector — Read indexes section specifically (HNSW vs IVFFlat).</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">YouTube</div>
+        <div class="res-name">Be A Better Dev — AWS Lambda</div>
+        <div class="res-detail">Search: "Be A Better Dev Lambda cold start" — best practical Lambda series on YouTube.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">Hands-on</div>
+        <div class="res-name">AWS SAM CLI</div>
+        <div class="res-detail">Install SAM CLI. Build and deploy a Lambda function locally. Essential for real understanding.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEK 2 -->
+
+<section id="week2" class="section">
+  <div class="section-label">// Week 2 — Days 8 to 14</div>
+  <div class="week-header wh-2">
+    <div class="week-num" style="color:var(--w2)">02</div>
+    <div class="week-info">
+      <h2 style="color:var(--w2)">RAG DEPTH + DSA + PROJECT UPGRADES</h2>
+      <p>Advanced RAG · RAGAS Eval · System Design · Neetcode Easy-Medium · GitHub Polish</p>
+    </div>
+    <div class="week-goal wg-2">Goal: Become the Expert</div>
+  </div>
+
+  <div class="days-grid">
+
+
+<div class="day-card d2">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w2)">DAY 08</div>
+    <div class="day-name">Monday</div>
+    <div class="day-tag tag-rag">RAG Advanced</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">Advanced RAG — Beyond Basic Retrieval</div>
+    <ul class="day-tasks">
+      <li>Read: <strong>Hybrid retrieval</strong> — dense (vector) + sparse (BM25) + RRF fusion</li>
+      <li>Read: <strong>Chunk overlap</strong> — why 10–20% overlap prevents context loss at boundaries</li>
+      <li>Read: <strong>Re-ranking</strong> — cross-encoder re-rankers, why they improve precision</li>
+      <li>Understand: Difference between your current RAG and production-grade RAG</li>
+      <li>Write: List 3 improvements you'd make to your current RAG system</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: Advanced RAG patterns | Evening: Write improvement list</div>
+  </div>
+</div>
+
+<div class="day-card d2">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w2)">DAY 09</div>
+    <div class="day-name">Tuesday</div>
+    <div class="day-tag tag-rag">RAGAS Eval</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">RAG Evaluation — How to Prove It Works</div>
+    <ul class="day-tasks">
+      <li>Read: <strong>RAGAS framework</strong> — faithfulness, answer relevance, context precision, recall</li>
+      <li>Understand: Faithfulness — does the answer come from retrieved context or hallucinated?</li>
+      <li>Understand: Context precision — are the retrieved chunks actually relevant?</li>
+      <li>Install RAGAS: pip install ragas — run it on 5 sample Q&A pairs from your project</li>
+      <li>Add evaluation scores to your resume bullet — "faithfulness: 0.89"</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: RAGAS docs (docs.ragas.io) | Evening: Run RAGAS on your project</div>
+  </div>
+</div>
+
+<div class="day-card d2">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w2)">DAY 10</div>
+    <div class="day-name">Wednesday</div>
+    <div class="day-tag tag-sys">System Design</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">System Design — Design Your Own RAG at Scale</div>
+    <ul class="day-tasks">
+      <li>Study: <strong>Design a document Q&A system for 1M documents</strong></li>
+      <li>Draw the architecture: S3 → SQS → Lambda workers → Qdrant → FastAPI → Bedrock</li>
+      <li>Think through: How does ingestion scale? How does query scale?</li>
+      <li>Think through: What breaks first at 1M documents? What do you fix?</li>
+      <li>Send 5 more applications — now you're 20+ total</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: Design + draw | Evening: Applications</div>
+  </div>
+</div>
+
+<div class="day-card d2">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w2)">DAY 11</div>
+    <div class="day-name">Thursday</div>
+    <div class="day-tag tag-dsa">DSA</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">DSA — Arrays + Hashmaps (Mid Company Level)</div>
+    <ul class="day-tasks">
+      <li>Do: <strong>Two Sum</strong> (Easy) — understand hashmap approach</li>
+      <li>Do: <strong>Valid Anagram</strong> (Easy) — character frequency counting</li>
+      <li>Do: <strong>Contains Duplicate</strong> (Easy) — set approach</li>
+      <li>Do: <strong>Group Anagrams</strong> (Medium) — hashmap grouping</li>
+      <li>Rule: Understand the pattern, not just the solution. Write why it works.</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: 2 problems | Evening: 2 problems + pattern notes</div>
+  </div>
+</div>
+
+<div class="day-card d2">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w2)">DAY 12</div>
+    <div class="day-name">Friday</div>
+    <div class="day-tag tag-project">Project Polish</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">GitHub + Docker + README</div>
+    <ul class="day-tasks">
+      <li>Make your RAG project repo <strong>public</strong> on GitHub</li>
+      <li>Write a README: Problem → Architecture diagram → Setup → Metrics</li>
+      <li>Add a simple architecture diagram (use draw.io — free)</li>
+      <li>Dockerize: Write a Dockerfile for your FastAPI app — docker build + run</li>
+      <li>Add GitHub link to your resume and LinkedIn profile today</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: README + diagram | Evening: Dockerfile + push</div>
+  </div>
+</div>
+
+<div class="day-card d2">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w2)">DAY 13</div>
+    <div class="day-name">Saturday</div>
+    <div class="day-tag tag-dsa">DSA + Apply</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">DSA — Sliding Window + Applications</div>
+    <ul class="day-tasks">
+      <li>Do: <strong>Best Time to Buy Stock</strong> (Easy) — sliding window</li>
+      <li>Do: <strong>Longest Substring Without Repeating</strong> (Medium)</li>
+      <li>Do: <strong>Maximum Subarray</strong> (Medium) — Kadane's algorithm</li>
+      <li><strong>Send 15 applications</strong> — this is your weekend application block</li>
+      <li>Send 3 referral messages to LinkedIn connections at target companies</li>
+    </ul>
+    <div class="day-time">⏱️ 1.5hr DSA morning + 2hr applications afternoon</div>
+  </div>
+</div>
+
+<div class="day-card d2">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w2)">DAY 14</div>
+    <div class="day-name">Sunday</div>
+    <div class="day-tag tag-sys">System Design</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">System Design — Design a Notification System</div>
+    <ul class="day-tasks">
+      <li>Study + draw: Producer → Kafka/SQS → Channel consumers → Delivery tracking</li>
+      <li>Think through: Idempotency, retries, DLQ, duplicate prevention</li>
+      <li>Answer out loud: "How would you handle 1M notifications per hour?"</li>
+      <li>Week 2 self-test: Answer all RAG depth questions from memory</li>
+      <li>Mark gaps: What's still shaky going into Week 3?</li>
+    </ul>
+    <div class="day-time">⏱️ 1hr system design + 1hr self-assessment</div>
+  </div>
+</div>
+
+<div class="day-card d2" style="border-style:dashed; opacity:0.7">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w2)">WEEK 2</div>
+    <div class="day-name">Exit Test</div>
+    <div class="day-tag tag-interview">Self Check</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">You Pass Week 2 If You Can Answer ALL of These</div>
+    <ul class="day-tasks">
+      <li>What is hybrid retrieval and why is it better than dense-only?</li>
+      <li>What does RAGAS faithfulness score measure? What's a good score?</li>
+      <li>Design a document Q&A system for 1M documents — draw it</li>
+      <li>Solve Two Sum on paper without looking it up</li>
+      <li>Is your RAG project public on GitHub with a README?</li>
+      <li>How many total applications sent? Should be 35+ by end of Week 2</li>
+    </ul>
+    <div class="day-time">⏱️ All 6 must be yes/answered before starting Week 3</div>
+  </div>
+</div>
+
+
+  </div>
+
+  <div class="resources">
+    <h3>Week 2 — Study Resources</h3>
+    <div class="res-grid">
+      <div class="res-item">
+        <div class="res-topic">RAG Advanced</div>
+        <div class="res-name">LlamaIndex RAG Guide</div>
+        <div class="res-detail">docs.llamaindex.ai — Advanced RAG section. Best practical guide on hybrid retrieval and re-ranking.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">Evaluation</div>
+        <div class="res-name">docs.ragas.io</div>
+        <div class="res-detail">Official RAGAS documentation. Read: Getting Started + Metrics Reference. Run it on your project.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">DSA</div>
+        <div class="res-name">Neetcode.io</div>
+        <div class="res-detail">neetcode.io — Use the roadmap. Start Arrays & Hashing section. Watch video before attempting each problem.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">System Design</div>
+        <div class="res-name">Gaurav Sen YouTube</div>
+        <div class="res-detail">Search: "Gaurav Sen system design" — Watch notification system and search system videos specifically.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">Docker</div>
+        <div class="res-name">Docker Official Get Started</div>
+        <div class="res-detail">docs.docker.com/get-started — Part 1 and 2 only. Enough to Dockerize a FastAPI app in 2 hours.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">Diagrams</div>
+        <div class="res-name">draw.io (diagrams.net)</div>
+        <div class="res-detail">Free, browser-based architecture diagrams. Use AWS shape library. Add diagram to your GitHub README.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEK 3 -->
+
+<section id="week3" class="section">
+  <div class="section-label">// Week 3 — Days 15 to 21</div>
+  <div class="week-header wh-3">
+    <div class="week-num" style="color:var(--w3)">03</div>
+    <div class="week-info">
+      <h2 style="color:var(--w3)">INTERVIEW SIMULATION + CONVERSION</h2>
+      <p>Mock Interviews · Behavioral STAR · Salary Negotiation · Live Interview Prep</p>
+    </div>
+    <div class="week-goal wg-3">Goal: Get Offers</div>
+  </div>
+
+  <div class="days-grid">
+
+
+<div class="day-card d3">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w3)">DAY 15</div>
+    <div class="day-name">Monday</div>
+    <div class="day-tag tag-interview">Project Story</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">Own Your Project Narrative — The 5-Minute Pitch</div>
+    <ul class="day-tasks">
+      <li>Write down: Exactly what YOU personally built vs team (be honest, be specific)</li>
+      <li>Write your 5-minute pitch: Context → Problem → What I built → Results → Learnings</li>
+      <li>Record yourself on phone saying the pitch — listen back, fix weak parts</li>
+      <li>Prepare: 3 technical decisions YOU made personally with reasoning</li>
+      <li>Prepare: 1 failure or bug you encountered and how you fixed it</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: Write pitch | Evening: Record + refine 3 times</div>
+  </div>
+</div>
+
+<div class="day-card d3">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w3)">DAY 16</div>
+    <div class="day-name">Tuesday</div>
+    <div class="day-tag tag-interview">Behavioral</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">Behavioral Questions — STAR-T Framework</div>
+    <ul class="day-tasks">
+      <li>Prepare STAR-T answers for: "Tell me about a time you improved performance"</li>
+      <li>Prepare STAR-T answers for: "Describe a technical decision with incomplete info"</li>
+      <li>Prepare STAR-T answers for: "How do you handle a production incident?"</li>
+      <li>Prepare STAR-T answers for: "Tell me about a disagreement with a teammate"</li>
+      <li>Rule: Every answer must end with a number or a lesson (the T = Takeaway)</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: Write 4 answers | Evening: Practice saying them out loud</div>
+  </div>
+</div>
+
+<div class="day-card d3">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w3)">DAY 17</div>
+    <div class="day-name">Wednesday</div>
+    <div class="day-tag tag-dsa">DSA Final</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">DSA — Trees (Mid Company Favorite)</div>
+    <ul class="day-tasks">
+      <li>Do: <strong>Invert Binary Tree</strong> (Easy) — recursive approach</li>
+      <li>Do: <strong>Maximum Depth of Binary Tree</strong> (Easy)</li>
+      <li>Do: <strong>Validate BST</strong> (Medium) — understand in-order traversal</li>
+      <li>Do: <strong>Level Order Traversal</strong> (Medium) — BFS with queue</li>
+      <li>Send 5 more applications — follow up on Week 1 applications</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: 2 Tree problems | Evening: 2 problems + applications</div>
+  </div>
+</div>
+
+<div class="day-card d3">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w3)">DAY 18</div>
+    <div class="day-name">Thursday</div>
+    <div class="day-tag tag-interview">Mock Interview</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">Full Mock Interview — Simulate Real Conditions</div>
+    <ul class="day-tasks">
+      <li>Use <strong>Pramp.com</strong> — book a free peer mock interview today</li>
+      <li>OR: Ask a friend/colleague to interview you for 45 minutes</li>
+      <li>Cover: Tell me about yourself + 2 technical questions + 1 system design</li>
+      <li>Record the session if possible — review your weak answers</li>
+      <li>After: Write down every question you struggled with — study those tonight</li>
+    </ul>
+    <div class="day-time">⏱️ 45min mock interview + 45min debrief and fixes</div>
+  </div>
+</div>
+
+<div class="day-card d3">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w3)">DAY 19</div>
+    <div class="day-name">Friday</div>
+    <div class="day-tag tag-interview">Python Deep</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">Python Internals — What Mid Companies Actually Ask</div>
+    <ul class="day-tasks">
+      <li>Study: <strong>GIL</strong> — what it is, asyncio vs multiprocessing, when each matters</li>
+      <li>Study: <strong>async/await in FastAPI</strong> — event loop, blocking vs non-blocking</li>
+      <li>Study: <strong>Generators</strong> — lazy evaluation, memory efficiency, yield keyword</li>
+      <li>Study: <strong>Decorators</strong> — write one from scratch (authentication decorator)</li>
+      <li>Practice: Explain each concept out loud as if teaching a junior</li>
+    </ul>
+    <div class="day-time">⏱️ Morning: GIL + async | Evening: Generators + decorators + speak out loud</div>
+  </div>
+</div>
+
+<div class="day-card d3">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w3)">DAY 20</div>
+    <div class="day-name">Saturday</div>
+    <div class="day-tag tag-apply">Salary + Apply</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">Salary Research + Final Application Blitz</div>
+    <ul class="day-tasks">
+      <li>Research: Glassdoor + AmbitionBox for target companies — Backend + AI Engineer salaries</li>
+      <li>Know your number: Target ₹18–26L. Never go below ₹18L. Never give number first.</li>
+      <li>Prepare: "What are your salary expectations?" — practice your answer</li>
+      <li><strong>Send 20 applications today</strong> — your biggest application day</li>
+      <li>Send 5 referral messages — this is your highest-conversion activity</li>
+    </ul>
+    <div class="day-time">⏱️ 30min salary research + 3hrs applications + referrals</div>
+  </div>
+</div>
+
+<div class="day-card d3">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w3)">DAY 21</div>
+    <div class="day-name">Sunday</div>
+    <div class="day-tag tag-interview">Final Mock</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">Final Full Mock Interview — You're Ready</div>
+    <ul class="day-tasks">
+      <li>Do a complete 60-minute mock: Intro + Technical + System Design + Behavioral</li>
+      <li>Answer without notes — everything from memory</li>
+      <li>Assess: Which questions are you still shaky on?</li>
+      <li>Update resume: Add RAGAS scores, Docker, any new skills from 3 weeks</li>
+      <li>Celebrate: You've done 21 days of real work. You're genuinely interview-ready.</li>
+    </ul>
+    <div class="day-time">⏱️ 1hr mock + 30min resume update + 30min reflection</div>
+  </div>
+</div>
+
+<div class="day-card d3" style="border-style:dashed; opacity:0.7">
+  <div class="day-header">
+    <div class="day-num" style="color:var(--w3)">WEEK 3</div>
+    <div class="day-name">Exit Test</div>
+    <div class="day-tag tag-interview">Final Check</div>
+  </div>
+  <div class="day-body">
+    <div class="day-focus">You're Interview-Ready If ALL of These Are True</div>
+    <ul class="day-tasks">
+      <li>Can explain your RAG system end-to-end in 5 minutes with confidence</li>
+      <li>Can answer "how does Lambda scale?" without hesitation</li>
+      <li>Have done at least 1 real mock interview with feedback</li>
+      <li>GitHub is public with README and architecture diagram</li>
+      <li>Have sent 60+ total applications</li>
+      <li>Know your salary number and can negotiate without panic</li>
+    </ul>
+    <div class="day-time">⏱️ 6/6 = You're ready. Less than 6 = Fix the gaps before interviewing.</div>
+  </div>
+</div>
+
+
+  </div>
+
+  <div class="resources">
+    <h3>Week 3 — Study Resources</h3>
+    <div class="res-grid">
+      <div class="res-item">
+        <div class="res-topic">Mock Interviews</div>
+        <div class="res-name">Pramp.com</div>
+        <div class="res-detail">Free peer mock interviews. Book 2 sessions this week. Choose "Backend" and "System Design" tracks.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">Python</div>
+        <div class="res-name">Real Python — Async IO</div>
+        <div class="res-detail">realpython.com/async-io-python — Best practical guide to async/await in Python. Read fully.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">System Design</div>
+        <div class="res-name">System Design Primer</div>
+        <div class="res-detail">github.com/donnemartin/system-design-primer — Read: Scalability + Database sections only.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">Salary</div>
+        <div class="res-name">AmbitionBox + Glassdoor</div>
+        <div class="res-detail">Search your target companies + "Backend Engineer" salary. Know the range before any negotiation.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">DSA</div>
+        <div class="res-name">Neetcode 150 — Trees</div>
+        <div class="res-detail">neetcode.io/roadmap — Complete Trees section. Watch video explanation before each problem.</div>
+      </div>
+      <div class="res-item">
+        <div class="res-topic">Behavioral</div>
+        <div class="res-name">STAR Method Guide</div>
+        <div class="res-detail">Search: "STAR method examples software engineer" — Write all 4 answers before Day 16.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CHECKLIST -->
+
+<section id="endcheck" class="section">
+  <div class="section-label">// End of 21 Days — What You Should Have</div>
+  <div class="end-checklist">
+    <div class="ecl-col c1">
+      <h4>Week 1 — AWS</h4>
+      <ul>
+        <li><div class="cb"></div><span>Can explain Lambda concurrency</span></li>
+        <li><div class="cb"></div><span>Can explain API GW + Lambda flow</span></li>
+        <li><div class="cb"></div><span>Can explain Lambda Authorizer + JWT</span></li>
+        <li><div class="cb"></div><span>Know why RDS Proxy exists</span></li>
+        <li><div class="cb"></div><span>Know Bedrock rate limit handling</span></li>
+        <li><div class="cb"></div><span>Can read CloudWatch Lambda metrics</span></li>
+        <li><div class="cb"></div><span>20+ applications sent</span></li>
+      </ul>
+    </div>
+    <div class="ecl-col c2">
+      <h4>Week 2 — RAG + DSA</h4>
+      <ul>
+        <li><div class="cb"></div><span>Can explain hybrid retrieval</span></li>
+        <li><div class="cb"></div><span>RAGAS implemented on project</span></li>
+        <li><div class="cb"></div><span>Designed doc Q&A at scale</span></li>
+        <li><div class="cb"></div><span>20+ Leetcode problems solved</span></li>
+        <li><div class="cb"></div><span>GitHub repo public + README</span></li>
+        <li><div class="cb"></div><span>Dockerfile written and working</span></li>
+        <li><div class="cb"></div><span>40+ total applications sent</span></li>
+      </ul>
+    </div>
+    <div class="ecl-col c3">
+      <h4>Week 3 — Interview Ready</h4>
+      <ul>
+        <li><div class="cb"></div><span>5-min project pitch memorized</span></li>
+        <li><div class="cb"></div><span>4 behavioral STAR answers ready</span></li>
+        <li><div class="cb"></div><span>1+ mock interview completed</span></li>
+        <li><div class="cb"></div><span>Python async/GIL/decorators solid</span></li>
+        <li><div class="cb"></div><span>Know salary target + negotiation</span></li>
+        <li><div class="cb"></div><span>Resume updated with new skills</span></li>
+        <li><div class="cb"></div><span>60+ total applications sent</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rules">
+    <h3>Final Honest Note</h3>
+    <ol>
+      <li><strong>21 days is enough</strong> — if you do the work every single day. The plan is designed for mid-company interviews, not FAANG. The bar is real-world problem solving, not algorithmic perfection.</li>
+      <li><strong>Your RAG experience is your moat.</strong> No one at a mid-company interview will have built what you've built at 2 years. Lead every conversation with it.</li>
+      <li><strong>Interviews will start arriving in Week 2.</strong> Don't panic — you're studying while the pipeline fills. That's the design.</li>
+      <li><strong>Come back and do mock interviews here</strong> after Week 1. You'll notice the difference immediately in how you answer technical questions.</li>
+      <li><strong>The goal is not perfection.</strong> The goal is to be better than the other candidate sitting in the same interview. 21 days of focused prep does that.</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Rishika Peruri · 3-Week Interview Battle Plan · Backend + AI Engineering · 2025
+</footer>
+
+</body>
+</html>
